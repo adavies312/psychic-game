@@ -3,12 +3,15 @@ var computerChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l
 
 
 //Variables for tracking players wins, losses, & guesses left
+var winzSpan = document.getElementById("winz");
+var lossezSpan = document.getElementById("lossez");
+var leftSpan = document.getElementById("left");
+var lettersSpan = document.getElementById("letters");
 var wins = 0;
 var losses = 0;
 var guessesLeft = 9;
 var lettersGuessed = [];
 var computerGuess = [];
-
 
 
 //Computer Picks Letter
@@ -36,7 +39,9 @@ if ((playerGuess === computerGuess[0]) && (guessesLeft > 0)) {
 	var compGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
 	computerGuess.push(compGuess);
     //display new computer letter
-    console.log(computerGuess[0]);
+	console.log(computerGuess[0]);
+	winzSpan.textContent = wins;
+	
 
 }
 
@@ -54,12 +59,12 @@ else {
 	var compGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
 	computerGuess.push(compGuess);
 	console.log(computerGuess[0]);
+	lossezSpan.textContent = losses;
+
 }
 
-var index = "<p>Guess what letter I\'m thinking of</p>" + "<p>Wins: " + wins + "</p>" + "<p>Losses: " + losses + "</p>" + "<p>Guesses Left: " + guessesLeft + "</p>" + "<p>Your guesses so far: " + lettersGuessed  + "</p>";
-
-document.querySelector("#psychic").innerHTML = index;
-
+leftSpan.innerHTML = guessesLeft;
+lettersSpan.innerHTML = lettersGuessed;
 }
 
 
