@@ -1,5 +1,3 @@
-# psychic-game
-
 # JavaScript Assignment
 
 ### Overview
