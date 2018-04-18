@@ -64,7 +64,8 @@ document.onkeyup = function (event) {
 		//console.log(computerGuess[0]);
 
 	}
-	
+
+	//displays win-loss count, guesses, and turns left
 	winzSpan.textContent = wins;
 	lossezSpan.textContent = losses;
 	leftSpan.textContent = guessesLeft;
