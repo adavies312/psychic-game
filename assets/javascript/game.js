@@ -1,8 +1,4 @@
-//Array of possible computer choices
-var computerChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-
-
-//Variables for tracking players wins, losses, & guesses left
+//Variables for wins, losses, & guesses 
 var winzSpan = document.getElementById("winz");
 var lossezSpan = document.getElementById("lossez");
 var leftSpan = document.getElementById("left");
@@ -12,11 +8,13 @@ var losses = 0;
 var guessesLeft = 9;
 var lettersGuessed = [];
 var computerGuess = [];
+var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
 
-//Computer Picks Letter
+
+//Computer Picks a Random Letter
 window.onload = function() {
-	var compGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+	var compGuess = alphabet[Math.floor(Math.random() * alphabet.length)];
     computerGuess.push(compGuess);
     //display computer guess
 	console.log(computerGuess[0]);
@@ -30,13 +28,13 @@ document.onkeyup = function(event) {
     //display players guess
 	console.log(playerGuess[0]);
 
-    //if player guesses right and has more than 0 turns left
+//if player guesses right and has more than 0 turns left
 if ((playerGuess === computerGuess[0]) && (guessesLeft > 0)) {
     wins++;
     guessesLeft = 9;
 	lettersGuessed.length = 0;
 	computerGuess.length = 0;
-	var compGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+	var compGuess = alphabet[Math.floor(Math.random() * alphabet.length)];
 	computerGuess.push(compGuess);
     //display new computer letter
 	console.log(computerGuess[0]);
@@ -56,8 +54,9 @@ else {
 	guessesLeft = 9;
 	lettersGuessed.length = 0;
 	computerGuess.length = 0;
-	var compGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+	var compGuess = alphabet[Math.floor(Math.random() * alphabet.length)];
 	computerGuess.push(compGuess);
+	//display new computer letter
 	console.log(computerGuess[0]);
 	lossezSpan.textContent = losses;
 
@@ -66,5 +65,3 @@ else {
 leftSpan.innerHTML = guessesLeft;
 lettersSpan.innerHTML = lettersGuessed;
 }
-
-
