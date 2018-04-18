@@ -1,5 +1,4 @@
 # psychic-game
-# word-guess-game
 
 # JavaScript Assignment
 
