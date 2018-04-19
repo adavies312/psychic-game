@@ -60,8 +60,8 @@ document.onkeyup = function (event) {
 	}
 
 	//displays win-loss count, guesses, and turns left
-	winzSpan.textContent = wins;
-	lossezSpan.textContent = losses;
-	leftSpan.textContent = guessesLeft;
-	lettersSpan.textContent = lettersGuessed;
+	winzSpan.innerHTML = wins;
+	lossezSpan.innerHTML = losses;
+	leftSpan.innerHTML = guessesLeft;
+	lettersSpan.innerHTML = lettersGuessed;
 }
