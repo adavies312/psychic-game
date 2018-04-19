@@ -12,7 +12,7 @@ var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m",
 
 
 
-//Computer Picks a Random Letter
+//on window loads, computer picks random letter from alphabet 
 window.onload = function () {
 	var compGuess = alphabet[Math.floor(Math.random() * alphabet.length)];
 	computerGuess.push(compGuess);
@@ -20,48 +20,42 @@ window.onload = function () {
 	//console.log(computerGuess[0]);
 }
 
-//only lets user pick a letter of the alphabet
-//if (event.keyCode >=65 && event.keyCode <=90) 
-
-
-//User picks letter
+//user picks letter
 document.onkeyup = function (event) {
 	var userGuess = event.key;
 	lettersGuessed.push(userGuess);
-	//display players guess
+	//display user guess
 	//console.log(userGuess[0]);
 
-	//if player guesses right and has more than 0 turns left...game resets
+	//user wins...
 	if ((userGuess === computerGuess[0]) && (guessesLeft > 0)) {
 		wins++;
 		alert("You really are a psychic");
+		//game resets
 		guessesLeft = 9;
 		lettersGuessed.length = 0;
 		computerGuess.length = 0;
 		var compGuess = alphabet[Math.floor(Math.random() * alphabet.length)];
 		computerGuess.push(compGuess);
-		//display new computer letter
-		//console.log(computerGuess[0]);
-
-
 	}
 
-	// if player doesn't guess right and still has guesses left...game continues
+
+	//user keeps playing...
 	else if ((userGuess !== computerGuess[0]) && (guessesLeft > 0)) {
 		guessesLeft--;
 	}
 
-	//if player has no turns left and guesses wrong...game resets
+	//user losses...
 	else {
 		losses++;
 		alert("Better luck next time");
+		//game resets
 		guessesLeft = 9;
 		lettersGuessed.length = 0;
 		computerGuess.length = 0;
 		var compGuess = alphabet[Math.floor(Math.random() * alphabet.length)];
 		computerGuess.push(compGuess);
-		//display new computer letter
-		//console.log(computerGuess[0]);
+
 
 	}
 

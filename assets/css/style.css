@@ -2,11 +2,6 @@ body {
     font-family: 'Mystery Quest', cursive;
         background-image: url(../images/psychic-background.jpg);
     }
-}
-
-h1 {
-    font-size: 48px;
-}
 
 .main-container {
     font-size: 48px;
