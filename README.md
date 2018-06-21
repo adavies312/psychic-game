@@ -1,10 +1,10 @@
 # Psychic Game
 
-## JavaScript Assignment
+## JavaScript Game
 
 ### Overview
 
-1. You're going to make a game just like the one in the video. Essentially, the app randomly picks a letter, and the user has to guess which letter the app chose. Put the following text on your page:
+1. A JavaScript game wherethe app randomly picks a letter, and the user has to guess which letter the app chose. Put the following text on your page:
 
 2. Guess what letter I'm thinking of
 
@@ -25,3 +25,6 @@
 * CSS
 * Bootstrap
 * JavaScript
+
+## In Game Screnshot
+![Psychic](/assets/images/psychic-game.png)
